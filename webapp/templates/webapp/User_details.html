@@ -1,0 +1,17 @@
+{% extends 'webapp/base.html' %}
+
+{% block content%}
+{% if user.is_authenticated %}
+
+<div class="container col-md-6 offset-md-3">
+  <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
+  <p>Username: {{ user.username }} </p>
+  <p>Email: {{ user.email }} </p>
+  <br />
+  <div>
+    <p><small>Click here to <a href="{% url 'edit' %}">Edit Profile</a> or <a href="{% url 'change_password' %}">Change
+          Password</small></a></p>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
